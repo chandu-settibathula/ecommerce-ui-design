@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Wishlist | Iqiniso</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Elms+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+<body class="saved-page">
+
+    <nav>
+        <div class="logo" onclick="window.location.href='index.html'">
+            <span class="logo-icon"><img src="images/logo.png" alt="Iqiniso Logo"></span> 
+            <strong>Iqiniso.footwear</strong>
+        </div>
+        <ul>
+            <li><a href="shop.html"><span>Shop</span><ion-icon name="bag-outline"></ion-icon></a></li>
+            <li><a href="saved.html" class="nav-link active"><span>Saved</span><ion-icon name="bookmark"></ion-icon></a></li>
+            <li><a href="cart.html"><span>Cart</span><ion-icon name="cart-outline"></ion-icon></a></li>
+            <li><a href="login.html"><span>Login</span><ion-icon name="person-outline"></ion-icon></a></li>
+        </ul>
+    </nav>
+    
+    <div class="cart-container" style="margin: 140px auto var(--space-xl) auto;">
+        <h1>Your Saved Wishlist</h1>
+        <div class="cart-layout-wrapper">
+            <main class="cart-items-section" id="saved-items-list" style="flex: 0 0 100%; max-width: 100%;">
+                <p>Your wishlist is empty.</p>
+            </main>
+        </div>
+    </div>
+
+
+
+    <footer>
+        <div class="footer-main">
+            <div class="footer-col brand-col">
+                <div class="logo">
+                    <span class="logo-icon"><img src="images/logo.png" alt="Iqiniso Logo"></span> 
+                    <strong>Iqiniso</strong>
+                </div>
+                <p class="brand-desc">Engineered for comfort, minimalist by design. Crafting steps that look forward.</p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Collections</h4>
+                <ul>
+                    <li><a href="shop.html">New Arrivals</a></li>
+                    <li><a href="shop.html">Best Sellers</a></li>
+                    <li><a href="shop.html">Sneakers</a></li>
+                    <li><a href="shop.html">Loafers & Boots</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#">Order Tracking</a></li>
+                    <li><a href="#">Shipping Policy</a></li>
+                    <li><a href="#">Returns & Exchanges</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col newsletter-col">
+                <h4>Stay in the Loop</h4>
+                <p>Subscribe to receive custom drops, styling tips, and private discounts.</p>
+                <form class="newsletter-form" onsubmit="event.preventDefault();">
+                    <input type="email" placeholder="Enter your email" aria-label="Your email" required>
+                    <button type="submit" aria-label="Subscribe"><ion-icon name="arrow-forward-outline"></ion-icon></button>
+                </form>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p class="copyright">© 2026 Iqiniso | Designed with Style</p>
+            <div class="footer-legal">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <div class="mobile-nav">
+        <ul>
+            <li><a href="index.html"><ion-icon name="home-outline"></ion-icon></a></li>
+            <li><a href="shop.html"><ion-icon name="bag-outline"></ion-icon></a></li>
+            <li><a href="saved.html" class="active"><ion-icon name="bookmark"></ion-icon></a></li>
+            <li><a href="cart.html"><ion-icon name="cart-outline"></ion-icon></a></li>
+            <li><a href="login.html"><ion-icon name="person-outline"></ion-icon></a></li>
+        </ul>
+    </div>
+
+    <script src="saved.js"></script>
+</body>
+</html>

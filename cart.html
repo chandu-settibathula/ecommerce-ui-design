@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Shopping Bag | Iqiniso</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Elms+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+
+<body class="cart-page">
+
+    <nav>
+        <div class="logo" onclick="window.location.href='index.html'">
+            <span class="logo-icon"><img src="images/logo.png" alt="Iqiniso Logo"></span> 
+            <strong>Iqiniso.footwear</strong>
+        </div>
+
+        <ul>
+            <li><a href="shop.html"><span>Shop</span><ion-icon name="bag-outline"></ion-icon></a></li>
+            <li><a href="saved.html"><span>Saved</span><ion-icon name="bookmark-outline"></ion-icon></a></li>
+            <li><a href="cart.html" class="nav-link active"><span>Cart</span><ion-icon name="cart"></ion-icon></a></li>
+            <li><a href="login.html"><span>Login</span><ion-icon name="person-outline"></ion-icon></a></li>
+        </ul>
+    </nav>
+
+    <div class="cart-container">
+        <h1>Your Shopping Bag</h1>
+        
+        <div class="cart-layout-wrapper">
+            <main class="cart-items-section" id="cart-items-list">
+                </main>
+
+            <aside class="cart-summary-card">
+                <h3>Order Summary</h3>
+                <div class="summary-row">
+                    <span>Subtotal</span>
+                    <span id="summary-subtotal">₹0</span>
+                </div>
+                <div class="summary-row">
+                    <span>Shipping</span>
+                    <span id="summary-shipping">FREE</span>
+                </div>
+                <hr class="summary-divider">
+                <div class="summary-row total-row">
+                    <span>Total Amount</span>
+                    <strong id="summary-total">₹0</strong>
+                </div>
+                <a href="payment.html"><button class="checkout-btn">Proceed to Secure Checkout</button></a>
+                <a href="shop.html" class="continue-shopping">← Continue Shopping</a>
+            </aside>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-main">
+            <div class="footer-col brand-col">
+                <div class="logo">
+                    <span class="logo-icon"><img src="images/logo.png" alt="Iqiniso Logo"></span> 
+                    <strong>Iqiniso</strong>
+                </div>
+                <p class="brand-desc">Engineered for comfort, minimalist by design. Crafting steps that look forward.</p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Collections</h4>
+                <ul>
+                    <li><a href="shop.html">New Arrivals</a></li>
+                    <li><a href="shop.html">Best Sellers</a></li>
+                    <li><a href="shop.html">Sneakers</a></li>
+                    <li><a href="shop.html">Loafers & Boots</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#">Order Tracking</a></li>
+                    <li><a href="#">Shipping Policy</a></li>
+                    <li><a href="#">Returns & Exchanges</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col newsletter-col">
+                <h4>Stay in the Loop</h4>
+                <p>Subscribe to receive custom drops, styling tips, and private discounts.</p>
+                <form class="newsletter-form" onsubmit="event.preventDefault();">
+                    <input type="email" placeholder="Enter your email" aria-label="Your email" required>
+                    <button type="submit" aria-label="Subscribe"><ion-icon name="arrow-forward-outline"></ion-icon></button>
+                </form>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p class="copyright">© 2026 Iqiniso | Designed with Style</p>
+            <div class="footer-legal">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <div class="mobile-nav">
+        <ul>
+            <li><a href="index.html"><ion-icon name="home-outline"></ion-icon></a></li>
+            <li><a href="shop.html"><ion-icon name="bag-outline"></ion-icon></a></li>
+            <li><a href="saved.html"><ion-icon name="bookmark-outline"></ion-icon></a></li>
+            <li><a href="cart.html" class="active"><ion-icon name="cart"></ion-icon></a></li>
+            <li><a href="login.html"><ion-icon name="person-outline"></ion-icon></a></li>
+        </ul>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const itemsContainer = document.getElementById('cart-items-list');
+            const subtotalLabel = document.getElementById('summary-subtotal');
+            const shippingLabel = document.getElementById('summary-shipping');
+            const totalLabel = document.getElementById('summary-total');
+
+            function renderCart() {
+                const cart = JSON.parse(localStorage.getItem('iqiniso_cart')) || [];
+                itemsContainer.innerHTML = '';
+
+                if (cart.length === 0) {
+                    itemsContainer.innerHTML = `
+                        <div style="text-align: center; padding: 2rem 1rem; color: var(--text-muted);">
+                            <ion-icon name="cart-outline" style="font-size: 4rem; margin-bottom: 1rem; color: var(--text-muted);"></ion-icon>
+                            <h2>Your cart is completely empty</h2>
+                            <p style="margin-top: var(--space-xs);">Looks like you haven't added any footwear choices yet.</p>
+                            <a href="shop.html" class="cta-btn" style="display: inline-block; text-decoration: none; margin-top: 1.5rem; font-size:0.95rem; padding: 12px 28px;">Explore Shop</a>
+                        </div>`;
+                    subtotalLabel.textContent = '₹0';
+                    shippingLabel.textContent = '₹0';
+                    totalLabel.textContent = '₹0';
+                    return;
+                }
+
+                let subtotal = 0;
+
+                cart.forEach((item, index) => {
+                    subtotal += item.price * item.quantity;
+                    
+                    const itemRow = document.createElement('div');
+                    itemRow.className = 'cart-item-row';
+                    itemRow.innerHTML = `
+                        <div class="cart-item-info">
+                            <img src="${item.image}" alt="${item.name}">
+                            <div>
+                                <h4>${item.name}</h4>
+                                <p class="item-unit-price">₹${item.price.toLocaleString('en-IN')}</p>
+                            </div>
+                        </div>
+                        <div class="cart-item-actions">
+                            <div class="quantity-control">
+                                <button onclick="changeQty(${index}, -1)">-</button>
+                                <span>${item.quantity}</span>
+                                <button onclick="changeQty(${index}, 1)">+</button>
+                            </div>
+                            <strong class="item-total-price">₹${(item.price * item.quantity).toLocaleString('en-IN')}</strong>
+                            <button class="remove-item-btn" onclick="removeItem(${index})" aria-label="Remove item"><ion-icon name="trash-outline"></ion-icon></button>
+                        </div>
+                    `;
+                    itemsContainer.appendChild(itemRow);
+                });
+
+                // Update side calculation matrices
+                subtotalLabel.textContent = `₹${subtotal.toLocaleString('en-IN')}`;
+                const shippingCost = subtotal >= 2999 ? 0 : 150;
+                shippingLabel.textContent = shippingCost === 0 ? 'FREE' : `₹${shippingCost}`;
+                totalLabel.textContent = `₹${(subtotal + shippingCost).toLocaleString('en-IN')}`;
+            }
+
+            window.changeQty = (index, delta) => {
+                let cart = JSON.parse(localStorage.getItem('iqiniso_cart')) || [];
+                cart[index].quantity += delta;
+                if (cart[index].quantity <= 0) {
+                    cart.splice(index, 1);
+                }
+                localStorage.setItem('iqiniso_cart', JSON.stringify(cart));
+                renderCart();
+            };
+
+            window.removeItem = (index) => {
+                let cart = JSON.parse(localStorage.getItem('iqiniso_cart')) || [];
+                cart.splice(index, 1);
+                localStorage.setItem('iqiniso_cart', JSON.stringify(cart));
+                renderCart();
+            };
+
+            renderCart();
+        });
+    </script>
+</body>
+</html>

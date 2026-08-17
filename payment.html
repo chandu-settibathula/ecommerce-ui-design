@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Payment | Iqiniso</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Elms+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Ionicons -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+
+<body class="payment-page">
+
+    <nav>
+        <div class="logo" onclick="window.location.href='index.html'">
+            <span class="logo-icon"><img src="images/logo.png" alt="Iqiniso Logo"></span> 
+            <strong>Iqiniso.footwear</strong>
+        </div>
+
+        <ul>
+            <li><a href="shop.html"><span>Shop</span><ion-icon name="bag-outline"></ion-icon></a></li>
+            <li><a href="saved.html"><span>Saved</span><ion-icon name="bookmark-outline"></ion-icon></a></li>
+            <li><a href="cart.html"><span>Cart</span><ion-icon name="cart-outline"></ion-icon></a></li>
+            <li><a href="login.html"><span>Login</span><ion-icon name="person-outline"></ion-icon></a></li>
+        </ul>
+    </nav>
+
+    <div class="payment-container">
+        <h1>Checkout & Payment</h1>
+
+        <form id="payment-form">
+            <div class="payment-layout">
+                
+                <!-- Left Section: Address & Options -->
+                <div class="payment-form-section">
+                    
+                    <!-- Delivery Address Card -->
+                    <div class="form-card">
+                        <h2><ion-icon name="location-outline"></ion-icon> Shipping Address</h2>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="fullname">Full Name</label>
+                                <input type="text" id="fullname" placeholder="John Doe" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" placeholder="+91 98765 43210" required>
+                            </div>
+                            <div class="form-group full-width">
+                                <label for="address">Street Address</label>
+                                <input type="text" id="address" placeholder="Flat, House no., Building, Street" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="city">City</label>
+                                <input type="text" id="city" placeholder="Mumbai" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="pincode">Pincode</label>
+                                <input type="text" id="pincode" placeholder="400001" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Payment Option Card -->
+                    <div class="form-card">
+                        <h2><ion-icon name="card-outline"></ion-icon> Payment Option</h2>
+                        
+                        <div class="payment-methods">
+                            
+                            <!-- UPI -->
+                            <label class="method-option">
+                                <input type="radio" name="payment_method" value="upi" checked>
+                                <span class="method-title">UPI (GPay / PhonePe / Paytm)</span>
+                                <ion-icon name="qr-code-outline"></ion-icon>
+                            </label>
+                            <div id="upi-details" class="method-details active">
+                                <div class="form-group">
+                                    <label for="upi-id">Virtual Payment Address (VPA)</label>
+                                    <input type="text" id="upi-id" placeholder="username@upi">
+                                </div>
+                            </div>
+
+                            <!-- Cards -->
+                            <label class="method-option">
+                                <input type="radio" name="payment_method" value="card">
+                                <span class="method-title">Credit / Debit Card</span>
+                                <ion-icon name="card-sharp"></ion-icon>
+                            </label>
+                            <div id="card-details" class="method-details">
+                                <div class="form-grid">
+                                    <div class="form-group full-width">
+                                        <label for="card-num">Card Number</label>
+                                        <input type="text" id="card-num" placeholder="1234 5678 9101 1121" maxlength="19">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="card-exp">Expiry Date</label>
+                                        <input type="text" id="card-exp" placeholder="MM/YY" maxlength="5">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="card-cvv">CVV</label>
+                                        <input type="password" id="card-cvv" placeholder="•••" maxlength="3">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- COD -->
+                            <label class="method-option">
+                                <input type="radio" name="payment_method" value="cod">
+                                <span class="method-title">Cash on Delivery (COD)</span>
+                                <ion-icon name="cash-outline"></ion-icon>
+                            </label>
+                            <div id="cod-details" class="method-details">
+                                <p style="font-size: 0.85rem; color: var(--text-muted);">Pay with cash upon delivery of your items.</p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Right Section: Order Summary Panel -->
+                <aside class="cart-summary-card">
+                    <h3>Order Summary</h3>
+                    
+                    <div id="payment-summary-items" class="summary-items-list">
+                        <!-- Loaded dynamically via payment.js -->
+                    </div>
+
+                    <hr class="summary-divider">
+
+                    <div class="summary-row">
+                        <span>Subtotal</span>
+                        <span id="pay-subtotal">₹0</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Shipping</span>
+                        <span id="pay-shipping">FREE</span>
+                    </div>
+                    <hr class="summary-divider">
+                    <div class="summary-row total-row">
+                        <span>Total Payable</span>
+                        <strong id="pay-total">₹0</strong>
+                    </div>
+
+                    <button type="submit" class="checkout-btn">Complete Payment</button>
+                    <a href="cart.html" class="continue-shopping">← Return to Cart</a>
+                </aside>
+
+            </div>
+        </form>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="modal-overlay" id="success-modal">
+        <div class="modal-content" style="max-width: 450px; justify-content: center;">
+            <div class="success-modal">
+                <ion-icon name="checkmark-circle-outline"></ion-icon>
+                <h2>Order Placed!</h2>
+                <p>Thank you for shopping with Iqiniso. Your order reference number is <strong>#IQN-<span id="order-id"></span></strong>.</p>
+                <a href="shop.html" class="checkout-btn" style="display: block; text-decoration: none;">Back to Shop</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-main">
+            <div class="footer-col brand-col">
+                <div class="logo">
+                    <span class="logo-icon"><img src="images/logo.png" alt="Iqiniso Logo"></span> 
+                    <strong>Iqiniso</strong>
+                </div>
+                <p class="brand-desc">Engineered for comfort, minimalist by design. Crafting steps that look forward.</p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Collections</h4>
+                <ul>
+                    <li><a href="shop.html">New Arrivals</a></li>
+                    <li><a href="shop.html">Best Sellers</a></li>
+                    <li><a href="shop.html">Sneakers</a></li>
+                    <li><a href="shop.html">Loafers & Boots</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#">Order Tracking</a></li>
+                    <li><a href="#">Shipping Policy</a></li>
+                    <li><a href="#">Returns & Exchanges</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col newsletter-col">
+                <h4>Stay in the Loop</h4>
+                <p>Subscribe to receive custom drops, styling tips, and private discounts.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email" aria-label="Your email" required>
+                    <button type="submit" aria-label="Subscribe"><ion-icon name="arrow-forward-outline"></ion-icon></button>
+                </form>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p class="copyright">© 2026 Iqiniso | Designed with Style</p>
+            <div class="footer-legal">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <div class="mobile-nav">
+        <ul>
+            <li><a href="index.html"><ion-icon name="home-outline"></ion-icon></a></li>
+            <li><a href="shop.html"><ion-icon name="bag-outline"></ion-icon></a></li>
+            <li><a href="saved.html"><ion-icon name="bookmark-outline"></ion-icon></a></li>
+            <li><a href="cart.html" class="active"><ion-icon name="cart"></ion-icon></a></li>
+            <li><a href="login.html"><ion-icon name="person-outline"></ion-icon></a></li>
+        </ul>
+    </div>
+
+    <!-- External Payment Logic -->
+    <script src="payment.js"></script>
+</body>
+</html>

@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop All Footwear | Iqiniso</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Elms+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+<body class="shop-page">
+
+    <nav>
+        <div class="logo" onclick="window.location.href='index.html'">
+            <span class="logo-icon"><img src="images/logo.png" alt="Iqiniso Logo"></span> 
+            <strong>Iqiniso.footwear</strong>
+        </div>
+        <div class="search-wrapper">
+            <ion-icon name="search-outline" class="search-icon"></ion-icon>
+            <input type="text" id="shop-search" placeholder="Search shoes, sneakers, loafers..." aria-label="Search products">
+        </div>
+        <ul>
+            <li><a href="shop.html" class="nav-link active"><span>Shop</span><ion-icon name="bag"></ion-icon></a></li>
+            <li><a href="saved.html"><span>Saved</span><ion-icon name="bookmark-outline"></ion-icon></a></li>
+            <li><a href="cart.html"><span>Cart</span><ion-icon name="cart-outline"></ion-icon></a></li>
+            <li><a href="login.html"><span>Login</span><ion-icon name="person-outline"></ion-icon></a></li>
+        </ul>
+    </nav>
+
+    <div class="shop-container">
+        <div class="mobile-filter-bar">
+            <button id="mobile-filter-trigger"><ion-icon name="options-outline"></ion-icon> Filters</button>
+            <span class="results-count"><span id="count-mobile">8</span> Products</span>
+        </div>
+
+        <aside class="filter-sidebar" id="filter-sidebar">
+            <div class="sidebar-header">
+                <h3>Filters</h3>
+                <button id="close-filters"><ion-icon name="close-outline"></ion-icon></button>
+            </div>
+            <div class="filter-group">
+                <h4>Category</h4>
+                <div class="filter-options">
+                    <label class="filter-checkbox"><input type="checkbox" name="category" value="trekking"><span class="checkmark"></span> Trekking & Running</label>
+                    <label class="filter-checkbox"><input type="checkbox" name="category" value="boots"><span class="checkmark"></span> Boots</label>
+                    <label class="filter-checkbox"><input type="checkbox" name="category" value="formals"><span class="checkmark"></span> Formal Shoes</label>
+                    <label class="filter-checkbox"><input type="checkbox" name="category" value="trainer"><span class="checkmark"></span> Sneakers & Trainers</label>
+                    <label class="filter-checkbox"><input type="checkbox" name="category" value="militiary"><span class="checkmark"></span> Militiary</label>
+                    <label class="filter-checkbox"><input type="checkbox" name="category" value="slides"><span class="checkmark"></span> Slides</label>
+                    <label class="filter-checkbox"><input type="checkbox" name="category" value="slippers"><span class="checkmark"></span> Slippers</label>
+                </div>
+            </div>
+            <div class="filter-group">
+                <h4>Max Price</h4>
+                <div class="price-range-wrapper">
+                    <input type="range" id="price-range" min="500" max="20000" step="500" value="20000">
+                    <div class="price-labels"><span>₹500</span><strong id="price-limit">₹20,000</strong></div>
+                </div>
+            </div>
+            <button id="clear-filters-btn" class="clear-btn">Clear All Filters</button>
+        </aside>
+
+        <main class="catalog-content">
+            <div class="catalog-toolbar">
+                <span class="results-count desktop-count"><span id="count-desktop"></span> products found</span>
+                <div class="sort-wrapper">
+                    <label for="sort-select">Sort by:</label>
+                    <select id="sort-select">
+                        <option value="featured">Featured</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                    </select>
+                </div>
+            </div>
+
+            <section class="product-grid" id="catalog-grid">
+                <div class="product-card-container" data-id="prod-1" data-category="trekking" data-price="1099">
+                    <div class="product-card">
+                        <span class="badge">LIMITED OFFER</span>
+                        <img src="images/men/ASIAN Men's Everest-02 Sports Trekking & Hiking,Walking Shoes.jpg" alt="">
+                        <div class="action-overlay">
+                            <button class="action-icon-btn add-to-saved-btn" aria-label="save"><ion-icon name="bookmark-outline"></ion-icon></button>
+ 
+                        </div>
+                    </div>
+                    
+                    <div class="product-info">
+                        <div class="product-meta-row">
+                            <div class="product-rating">
+                            <div class="stars">
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star-half"></ion-icon>
+                            </div>
+                            <span class="rating-value">4.5</span>
+                        </div>
+                            <span class="product-price">₹1,099</span>
+                        </div>
+                        <h3 class="product-name"><strong>ASIAN </strong><br> Mens Everest-02 Sports Trekking Shoes</h3>
+                    </div>
+                    <div class="sidebyside"><a href="payment.html"><button id="add-to-cart" class="buynow-btn">Buy Now</button></a>
+                    <button id="add-to-cart" class="checkout-btn add-to-cart-btn">Add to Cart</button></div>
+                </div>
+
+
+
+                <div class="product-card-container" data-id="prod-2" data-category="trekking" data-price="1699">
+                    <div class="product-card">
+                        <img src="images/men/Bacca Bucci Men Lace Up Hiking Shoe.jpg" alt="">
+                        <div class="action-overlay">
+                            <button class="action-icon-btn add-to-saved-btn" aria-label="save"><ion-icon name="bookmark-outline"></ion-icon></button>
+ 
+                        </div>
+                    </div>
+                    
+                    <div class="product-info">
+                        <div class="product-meta-row">
+                            <div class="product-rating">
+                            <div class="stars">
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star-half"></ion-icon>
+                            </div>
+                            <span class="rating-value">4.5</span>
+                        </div>
+                            <span class="product-price">₹1,699</span>
+                        </div>
+                        <h3 class="product-name"><strong>BACCA BUCCI </strong><br> Mens Lace Up Hiking Shoe</h3>
+                    </div>
+                     <div class="sidebyside"><a href="payment.html"><button id="add-to-cart" class="buynow-btn">Buy Now</button></a>
+                    <button id="add-to-cart" class="checkout-btn add-to-cart-btn">Add to Cart</button></div>
+                </div>
+
+
+
+                <div class="product-card-container" data-id="prod-3" data-category="trekking" data-price="1499">
+                    <div class="product-card">
+                        <img src="images/men/Bacca Bucci Men Lace Up Running Shoes.jpg" alt="">
+                        <div class="action-overlay">
+                            <button class="action-icon-btn add-to-saved-btn" aria-label="save"><ion-icon name="bookmark-outline"></ion-icon></button>
+ 
+                        </div>
+                    </div>
+                    
+                    <div class="product-info">
+                        <div class="product-meta-row">
+                            <div class="product-rating">
+                            <div class="stars">
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star-half"></ion-icon>
+                            </div>
+                            <span class="rating-value">4.5</span>
+                        </div>
+                            <span class="product-price">₹1,499</span>
+                        </div>
+                        <h3 class="product-name"><strong>BACCA BUCCI </strong><br> Mens Lace Up Running Shoes</h3>
+                    </div>
+                     <div class="sidebyside"><a href="payment.html"><button id="add-to-cart" class="buynow-btn">Buy Now</button></a>
+                    <button id="add-to-cart" class="checkout-btn add-to-cart-btn">Add to Cart</button></div>
+                </div>
+                
+
+
+
+                <div class="product-card-container" data-id="prod-4" data-category="trainer" data-price="1199">
+                    <div class="product-card">
+                        <img src="images/men/Boldfit Sneakers for Man Lightweight Shoes for Men.jpg" alt="">
+                        <div class="action-overlay">
+                            <button class="action-icon-btn add-to-saved-btn" aria-label="save"><ion-icon name="bookmark-outline"></ion-icon></button>
+ 
+                        </div>
+                    </div>
+                    
+                    <div class="product-info">
+                        <div class="product-meta-row">
+                            <div class="product-rating">
+                            <div class="stars">
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star-half"></ion-icon>
+                            </div>
+                            <span class="rating-value">4.5</span>
+                        </div>
+                            <span class="product-price">₹1,199</span>
+                        </div>
+                        <h3 class="product-name"><strong>BOLDFIT </strong><br> Mens Lace Up Running Shoes</h3>
+                    </div>
+                     <div class="sidebyside"><a href="payment.html"><button id="add-to-cart" class="buynow-btn">Buy Now</button></a>
+                    <button id="add-to-cart" class="checkout-btn add-to-cart-btn">Add to Cart</button></div>
+                </div>
+                
+
+
+
+                <div class="product-card-container" data-id="prod-5" data-category="trainer" data-price="1099">
+                    <div class="product-card">
+                        <img src="images/men/Campus Men's FEROX Running Shoes.jpg" alt="">
+                        <div class="action-overlay">
+                            <button class="action-icon-btn add-to-saved-btn" aria-label="save"><ion-icon name="bookmark-outline"></ion-icon></button>
+ 
+                        </div>
+                    </div>
+                    
+                    <div class="product-info">
+                        <div class="product-meta-row">
+                            <div class="product-rating">
+                            <div class="stars">
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star-outline"></ion-icon>
+                            </div>
+                            <span class="rating-value">4.0</span>
+                        </div>
+                            <span class="product-price">₹1,099</span>
+                        </div>
+                        <h3 class="product-name"><strong>CAMPUS </strong><br> Mens FEROX Running Shoes</h3>
+                    </div>
+                     <div class="sidebyside"><a href="payment.html"><button id="add-to-cart" class="buynow-btn">Buy Now</button></a>
+                    <button id="add-to-cart" class="checkout-btn add-to-cart-btn">Add to Cart</button></div>
+                </div>                
+                 
+
+
+
+                <div class="product-card-container" data-id="prod-6" data-category="formals" data-price="1399">
+                    <div class="product-card">
+                        <img src="images/men/Centrino Formal Shoes for Men Slip-On Dress Shoes.jpg" alt="">
+                        <div class="action-overlay">
+                            <button class="action-icon-btn add-to-saved-btn" aria-label="save"><ion-icon name="bookmark-outline"></ion-icon></button>
+ 
+                        </div>
+                    </div>
+                    
+                    <div class="product-info">
+                        <div class="product-meta-row">
+                            <div class="product-rating">
+                            <div class="stars">
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star-half"></ion-icon>
+                            </div>
+                            <span class="rating-value">4.5</span>
+                        </div>
+                            <span class="product-price">₹1,399</span>
+                        </div>
+                        <h3 class="product-name"><strong>CENTRINO </strong><br> Mens Formal Shoes Slip-On Dress Shoes</h3>
+                    </div>
+                     <div class="sidebyside"><a href="payment.html"><button id="add-to-cart" class="buynow-btn">Buy Now</button></a>
+                    <button id="add-to-cart" class="checkout-btn add-to-cart-btn">Add to Cart</button></div>
+                </div>                
+            
+
+
+
+ 
+                <div class="product-card-container" data-id="prod-7" data-category="formals" data-price="1399">
+                    <div class="product-card">
+                        <img src="images/men/Centrino Mens 9564 Centrino Men Glossy Formal Shoes.jpg" alt="">
+                        <div class="action-overlay">
+                            <button class="action-icon-btn add-to-saved-btn" aria-label="save"><ion-icon name="bookmark-outline"></ion-icon></button>
+ 
+                        </div>
+                    </div>
+                    
+                    <div class="product-info">
+                        <div class="product-meta-row">
+                            <div class="product-rating">
+                            <div class="stars">
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star-half"></ion-icon>
+                            </div>
+                            <span class="rating-value">4.5</span>
+                        </div>
+                            <span class="product-price">₹1,399</span>
+                        </div>
+                        <h3 class="product-name"><strong>CENTRINO </strong><br> Mens 9564 Glossy Formal Shoes</h3>
+                    </div>
+                     <div class="sidebyside"><a href="payment.html"><button id="add-to-cart" class="buynow-btn">Buy Now</button></a>
+                    <button id="add-to-cart" class="checkout-btn add-to-cart-btn">Add to Cart</button></div>
+                </div>                
+            
+
+ 
+                <div class="product-card-container" data-id="prod-8" data-category="slides" data-price="649">
+                    <div class="product-card">
+                        <img src="images/men/DOCTOR EXTRA SOFT Men's Classic Cushion Sliders.jpg" alt="">
+                        <div class="action-overlay">
+                            <button class="action-icon-btn add-to-saved-btn" aria-label="save"><ion-icon name="bookmark-outline"></ion-icon></button>
+ 
+                        </div>
+                    </div>
+                    
+                    <div class="product-info">
+                        <div class="product-meta-row">
+                            <div class="product-rating">
+                            <div class="stars">
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star-outline"></ion-icon>
+                            </div>
+                            <span class="rating-value">4.0</span>
+                        </div>
+                            <span class="product-price">₹649</span>
+                        </div>
+                        <h3 class="product-name"><strong>DOCTOR EXTRA SOFT </strong><br> Mens Classic Cushion Sliders</h3>
+                    </div>
+                     <div class="sidebyside"><a href="payment.html"><button id="add-to-cart" class="buynow-btn">Buy Now</button></a>
+                    <button id="add-to-cart" class="checkout-btn add-to-cart-btn">Add to Cart</button></div>
+                </div>
+            
+
+ 
+                <div class="product-card-container" data-id="prod-9" data-category="slides" data-price="699">
+                    <div class="product-card">
+                        <img src="images/men/DOCTOR EXTRA SOFT Men's Classic Ultra Soft Sliders.jpg" alt="">
+                        <div class="action-overlay">
+                            <button class="action-icon-btn add-to-saved-btn" aria-label="save"><ion-icon name="bookmark-outline"></ion-icon></button>
+ 
+                        </div>
+                    </div>
+                    
+                    <div class="product-info">
+                        <div class="product-meta-row">
+                            <div class="product-rating">
+                            <div class="stars">
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star-outline"></ion-icon>
+                            </div>
+                            <span class="rating-value">4.0</span>
+                        </div>
+                            <span class="product-price">₹699</span>
+                        </div>
+                        <h3 class="product-name"><strong>DOCTOR EXTRA SOFT </strong><br> Mens Classic Ultra soft Sliders</h3>
+                    </div>
+                     <div class="sidebyside"><a href="payment.html"><button id="add-to-cart" class="buynow-btn">Buy Now</button></a>
+                    <button id="add-to-cart" class="checkout-btn add-to-cart-btn">Add to Cart</button></div>
+                </div>
+            
+
+ 
+                <div class="product-card-container" data-id="prod-10" data-category="formals" data-price="1799">
+                    <div class="product-card">
+                        <img src="images/men/Hush Puppies Men's Lace-up Formal Shoes.jpg" alt="">
+                        <div class="action-overlay">
+                            <button class="action-icon-btn add-to-saved-btn" aria-label="save"><ion-icon name="bookmark-outline"></ion-icon></button>
+ 
+                        </div>
+                    </div>
+                    
+                    <div class="product-info">
+                        <div class="product-meta-row">
+                            <div class="product-rating">
+                            <div class="stars">
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star-outline"></ion-icon>
+                            </div>
+                            <span class="rating-value">4.0</span>
+                        </div>
+                            <span class="product-price">₹1,799</span>
+                        </div>
+                        <h3 class="product-name"><strong>HUSH PUPPIES </strong><br> Mens Lace-up Formal Shoes</h3>
+                    </div>
+                     <div class="sidebyside"><a href="payment.html"><button id="add-to-cart" class="buynow-btn">Buy Now</button></a>
+                    <button id="add-to-cart" class="checkout-btn add-to-cart-btn">Add to Cart</button></div>
+                </div>
+            
+
+ 
+                <div class="product-card-container" data-id="prod-11" data-category="boots" data-price="1299">
+                    <div class="product-card">
+                        <img src="images/men/Leo Fitness Waterproof Outdoor Trekking Boots.jpg" alt="">
+                        <div class="action-overlay">
+                            <button class="action-icon-btn add-to-saved-btn" aria-label="save"><ion-icon name="bookmark-outline"></ion-icon></button>
+ 
+                        </div>
+                    </div>
+                    
+                    <div class="product-info">
+                        <div class="product-meta-row">
+                            <div class="product-rating">
+                            <div class="stars">
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star-outline"></ion-icon>
+                            </div>
+                            <span class="rating-value">4.0</span>
+                        </div>
+                            <span class="product-price">₹1,299</span>
+                        </div>
+                        <h3 class="product-name"><strong>LEO </strong><br> Waterproof Outdoor Trekking Boots</h3>
+                    </div>
+                     <div class="sidebyside"><a href="payment.html"><button id="add-to-cart" class="buynow-btn">Buy Now</button></a>
+                    <button id="add-to-cart" class="checkout-btn add-to-cart-btn">Add to Cart</button></div>
+                </div>
+            
+
+ 
+                <div class="product-card-container" data-id="prod-12" data-category="slides" data-price="2099">
+                    <div class="product-card">
+                        <img src="images/men/Nike Mens Victori One Active Slides.jpg" alt="">
+                        <div class="action-overlay">
+                            <button class="action-icon-btn add-to-saved-btn" aria-label="save"><ion-icon name="bookmark-outline"></ion-icon></button>
+ 
+                        </div>
+                    </div>
+                    
+                    <div class="product-info">
+                        <div class="product-meta-row">
+                            <div class="product-rating">
+                            <div class="stars">
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star-outline"></ion-icon>
+                            </div>
+                            <span class="rating-value">4.0</span>
+                        </div>
+                            <span class="product-price">₹2,099</span>
+                        </div>
+                        <h3 class="product-name"><strong>NIKE </strong><br> Mens Victori One Active Slides</h3>
+                    </div>
+                     <div class="sidebyside"><a href="payment.html"><button id="add-to-cart" class="buynow-btn">Buy Now</button></a>
+                    <button id="add-to-cart" class="checkout-btn add-to-cart-btn">Add to Cart</button></div>
+                </div>
+            
+
+ 
+                <div class="product-card-container" data-id="prod-13" data-category="militiary" data-price="599">
+                    <div class="product-card">
+                        <img src="images/men/OMEE GOLD NCC Military Army Genuine Leather Boots.jpg" alt="">
+                        <div class="action-overlay">
+                            <button class="action-icon-btn add-to-saved-btn" aria-label="save"><ion-icon name="bookmark-outline"></ion-icon></button>
+ 
+                        </div>
+                    </div>
+                    
+                    <div class="product-info">
+                        <div class="product-meta-row">
+                            <div class="product-rating">
+                            <div class="stars">
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star-outline"></ion-icon>
+                            </div>
+                            <span class="rating-value">4.0</span>
+                        </div>
+                            <span class="product-price">₹599</span>
+                        </div>
+                        <h3 class="product-name"><strong>OMME GOLD </strong><br> NCC Military Army Genuine Leather Boots</h3>
+                    </div>
+                     <div class="sidebyside"><a href="payment.html"><button id="add-to-cart" class="buynow-btn">Buy Now</button></a>
+                    <button id="add-to-cart" class="checkout-btn add-to-cart-btn">Add to Cart</button></div>
+                </div>
+            
+
+ 
+                <div class="product-card-container" data-id="prod-14" data-category="slippers" data-price="499">
+                    <div class="product-card">
+                        <img src="images/men/Pampy Angel Slipper and Flipflop for Men, Comfortable & Light Weight.jpg" alt="">
+                        <div class="action-overlay">
+                            <button class="action-icon-btn add-to-saved-btn" aria-label="save"><ion-icon name="bookmark-outline"></ion-icon></button>
+ 
+                        </div>
+                    </div>
+                    
+                    <div class="product-info">
+                        <div class="product-meta-row">
+                            <div class="product-rating">
+                            <div class="stars">
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star-outline"></ion-icon>
+                            </div>
+                            <span class="rating-value">4.0</span>
+                        </div>
+                            <span class="product-price">₹499</span>
+                        </div>
+                        <h3 class="product-name"><strong>PAMPY ANGEL </strong><br> Slipper and Flipflop for Men, Comfortable & Light Weight</h3>
+                    </div>
+                     <div class="sidebyside"><a href="payment.html"><button id="add-to-cart" class="buynow-btn">Buy Now</button></a>
+                    <button id="add-to-cart" class="checkout-btn add-to-cart-btn">Add to Cart</button></div>
+                </div>
+            
+
+ 
+                <div class="product-card-container" data-id="prod-15" data-category="slides" data-price="799">
+                    <div class="product-card">
+                        <img src="images/men/Puma Men Popcat 20 RES Slide.jpg" alt="">
+                        <div class="action-overlay">
+                            <button class="action-icon-btn add-to-saved-btn" aria-label="save"><ion-icon name="bookmark-outline"></ion-icon></button>
+ 
+                        </div>
+                    </div>
+                    
+                    <div class="product-info">
+                        <div class="product-meta-row">
+                            <div class="product-rating">
+                            <div class="stars">
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star-outline"></ion-icon>
+                            </div>
+                            <span class="rating-value">4.0</span>
+                        </div>
+                            <span class="product-price">₹799</span>
+                        </div>
+                        <h3 class="product-name"><strong>PUMA </strong><br>Mens Popcat 20 RES Slide</h3>
+                    </div>
+                     <div class="sidebyside"><a href="payment.html"><button id="add-to-cart" class="buynow-btn">Buy Now</button></a>
+                    <button id="add-to-cart" class="checkout-btn add-to-cart-btn">Add to Cart</button></div>
+                </div>
+
+
+
+                <div class="product-card-container" data-id="prod-16" data-category="sneakers" data-price="1599">
+                    <div class="product-card">
+                        <img src="images/men/Puma Mens Dazzler Sneaker.jpg" alt="">
+                        <div class="action-overlay">
+                            <button class="action-icon-btn add-to-saved-btn" aria-label="save"><ion-icon name="bookmark-outline"></ion-icon></button>
+ 
+                        </div>
+                    </div>
+                    
+                    <div class="product-info">
+                        <div class="product-meta-row">
+                            <div class="product-rating">
+                            <div class="stars">
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star-outline"></ion-icon>
+                            </div>
+                            <span class="rating-value">4.0</span>
+                        </div>
+                            <span class="product-price">₹1,599</span>
+                        </div>
+                        <h3 class="product-name"><strong>PUMA </strong><br>Mens Dazzler Sneaker</h3>
+                    </div>
+                     <div class="sidebyside"><a href="payment.html"><button id="add-to-cart" class="buynow-btn">Buy Now</button></a>
+                    <button id="add-to-cart" class="checkout-btn add-to-cart-btn">Add to Cart</button></div>
+                </div>
+
+                <!-- girls -->
+                
+                <div class="product-card-container" data-id="prod-17" data-category="trekking" data-price="659">
+                    <div class="product-card">
+                        <span class="badge">LIMITED OFFER</span>
+                        <img src="images/women/ASIAN Mercury-21 Women’s Running Shoes.jpg" alt="">
+                        <div class="action-overlay">
+                            <button class="action-icon-btn add-to-saved-btn" aria-label="save"><ion-icon name="bookmark-outline"></ion-icon></button>
+ 
+                        </div>
+                    </div>
+                    
+                    <div class="product-info">
+                        <div class="product-meta-row">
+                            <div class="product-rating">
+                            <div class="stars">
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star-outline"></ion-icon>
+                            </div>
+                            <span class="rating-value">4.0</span>
+                        </div>
+                            <span class="product-price">₹659</span>
+                        </div>
+                        <h3 class="product-name"><strong>ASIAN </strong><br>Mercury-21 Womens Running Shoes</h3>
+                    </div>
+                     <div class="sidebyside"><a href="payment.html"><button id="add-to-cart" class="buynow-btn">Buy Now</button></a>
+                    <button id="add-to-cart" class="checkout-btn add-to-cart-btn">Add to Cart</button></div>
+                </div>
+
+                
+                <div class="product-card-container" data-id="prod-18" data-category="slides" data-price="699">
+                    <div class="product-card">
+                        <span class="badge">LIMITED OFFER</span>
+                        <img src="images/women/ASIAN Women's Casual Daily Used Clogs.jpg" alt="">
+                        <div class="action-overlay">
+                            <button class="action-icon-btn add-to-saved-btn" aria-label="save"><ion-icon name="bookmark-outline"></ion-icon></button>
+ 
+                        </div>
+                    </div>
+                    
+                    <div class="product-info">
+                        <div class="product-meta-row">
+                            <div class="product-rating">
+                            <div class="stars">
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star-outline"></ion-icon>
+                            </div>
+                            <span class="rating-value">4.0</span>
+                        </div>
+                            <span class="product-price">₹699</span>
+                        </div>
+                        <h3 class="product-name"><strong>ASIAN </strong><br>Women's Casual Daily Used Clogs</h3>
+                    </div>
+                     <div class="sidebyside"><a href="payment.html"><button id="add-to-cart" class="buynow-btn">Buy Now</button></a>
+                    <button id="add-to-cart" class="checkout-btn add-to-cart-btn">Add to Cart</button></div>
+                </div>
+
+                
+                <div class="product-card-container" data-id="prod-19" data-category="slippers" data-price="199">
+                    <div class="product-card">
+                        <img src="images/women/BestWomen Slipper Stylish Comfortable Lightweight Soft.jpg" alt="">
+                        <div class="action-overlay">
+                            <button class="action-icon-btn add-to-saved-btn" aria-label="save"><ion-icon name="bookmark-outline"></ion-icon></button>
+ 
+                        </div>
+                    </div>
+                    
+                    <div class="product-info">
+                        <div class="product-meta-row">
+                            <div class="product-rating">
+                            <div class="stars">
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star-half"></ion-icon>
+                                <ion-icon name="star-outline"></ion-icon>
+                            </div>
+                            <span class="rating-value">3.5</span>
+                        </div>
+                            <span class="product-price">₹199</span>
+                        </div>
+                        <h3 class="product-name"><strong>BEST WOMEN </strong><br>Slipper Stylish Comfortable Lightweight Soft</h3>
+                    </div>
+                     <div class="sidebyside"><a href="payment.html"><button id="add-to-cart" class="buynow-btn">Buy Now</button></a>
+                    <button id="add-to-cart" class="checkout-btn add-to-cart-btn">Add to Cart</button></div>
+                </div>
+
+
+                
+                <div class="product-card-container" data-id="prod-20" data-category="slides" data-price="299">
+                    <div class="product-card">
+                        <span class="badge">LIMITED OFFER</span>
+                        <img src="images/women/CASSIEY Women's Printed Tei Slides.jpg" alt="">
+                        <div class="action-overlay">
+                            <button class="action-icon-btn add-to-saved-btn" aria-label="save"><ion-icon name="bookmark-outline"></ion-icon></button>
+ 
+                        </div>
+                    </div>
+                    
+                    <div class="product-info">
+                        <div class="product-meta-row">
+                            <div class="product-rating">
+                            <div class="stars">
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star-half"></ion-icon>
+                                <ion-icon name="star-outline"></ion-icon>
+                            </div>
+                            <span class="rating-value">3.5</span>
+                        </div>
+                            <span class="product-price">₹299</span>
+                        </div>
+                        <h3 class="product-name"><strong>CASSIEY </strong><br>Womens Printed Tei Slides</h3>
+                    </div>
+                     <div class="sidebyside"><a href="payment.html"><button id="add-to-cart" class="buynow-btn">Buy Now</button></a>
+                    <button id="add-to-cart" class="checkout-btn add-to-cart-btn">Add to Cart</button></div>
+                </div>
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <div class="no-results-message" id="no-products-fallback" style="display: none;">
+                    <ion-icon name="sad-outline"></ion-icon>
+                    <h3>No products match your choices</h3>
+                    <p>Try resetting filters or adjusting your max price limit.</p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+
+    <footer>
+        <div class="footer-main">
+            <div class="footer-col brand-col">
+                <div class="logo">
+                    <span class="logo-icon"><img src="images/logo.png" alt="Iqiniso Logo"></span> 
+                    <strong>Iqiniso</strong>
+                </div>
+                <p class="brand-desc">Engineered for comfort, minimalist by design. Crafting steps that look forward.</p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Collections</h4>
+                <ul>
+                    <li><a href="shop.html">New Arrivals</a></li>
+                    <li><a href="shop.html">Best Sellers</a></li>
+                    <li><a href="shop.html">Sneakers</a></li>
+                    <li><a href="shop.html">Loafers & Boots</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#">Order Tracking</a></li>
+                    <li><a href="#">Shipping Policy</a></li>
+                    <li><a href="#">Returns & Exchanges</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col newsletter-col">
+                <h4>Stay in the Loop</h4>
+                <p>Subscribe to receive custom drops, styling tips, and private discounts.</p>
+                <form class="newsletter-form" onsubmit="event.preventDefault();">
+                    <input type="email" placeholder="Enter your email" aria-label="Your email" required>
+                    <button type="submit" aria-label="Subscribe"><ion-icon name="arrow-forward-outline"></ion-icon></button>
+                </form>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p class="copyright">© 2026 Iqiniso | Designed with Style</p>
+            <div class="footer-legal">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <div class="mobile-nav">
+        <ul>
+            <li><a href="index.html"><ion-icon name="home-outline"></ion-icon></a></li>
+            <li><a href="shop.html" class="active"><ion-icon name="bag"></ion-icon></a></li>
+            <li><a href="saved.html"><ion-icon name="bookmark-outline"></ion-icon></a></li>
+            <li><a href="cart.html"><ion-icon name="cart-outline"></ion-icon></a></li>
+            <li><a href="login.html"><ion-icon name="person-outline"></ion-icon></a></li>
+        </ul>
+    </div>
+
+
+    
+    <script src="shop.js"></script>
+</body>
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Shopping Bag | Iqiniso</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Elms+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+
+    <nav>
+        <div class="logo" onclick="window.location.href='index.html'">
+            <span class="logo-icon"><img src="images/logo.png" alt="Iqiniso Logo"></span> 
+            <strong>Iqiniso.footwear</strong>
+        </div>
+        <ul>
+            <li><a href="shop.html" class="nav-link">Shop</a></li>
+            <li><a href="cart.html"><span>Cart</span><ion-icon name="cart-outline"></ion-icon></a></li>
+        </ul>
+    </nav>>
+
+    <!-- Page Banner -->
+    <section class="page-banner">
+        <h1>We're Here to Help</h1>
+        <p>Got a question about sizing, orders, or returns? Reach out to us anytime.</p>
+    </section>
+
+    <!-- Main Contact Section -->
+    <main class="contact-page-container">
+        <div class="contact-grid">
+            
+            <!-- Left Side: Contact Info Cards -->
+            <div class="contact-info-sidebar">
+                
+                <div class="info-card">
+                    <div class="info-icon">
+                        <ion-icon name="location-outline"></ion-icon>
+                    </div>
+                    <div class="info-content">
+                        <h3>Visit Our Flagship Store</h3>
+                        <p>123 Fashion Street, Tech Zone</p>
+                        <p>Visakhapatnam, AP, India</p>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-icon">
+                        <ion-icon name="call-outline"></ion-icon>
+                    </div>
+                    <div class="info-content">
+                        <h3>Customer Care</h3>
+                        <p><strong>Phone:</strong> +91 (800) 123-4567</p>
+                        <p><strong>Mon - Sat:</strong> 9:00 AM – 8:00 PM</p>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-icon">
+                        <ion-icon name="mail-unread-outline"></ion-icon>
+                    </div>
+                    <div class="info-content">
+                        <h3>Email Support</h3>
+                        <p><strong>General:</strong> support@iqiniso.com</p>
+                        <p><strong>Orders:</strong> orders@iqiniso.com</p>
+                    </div>
+                </div>
+
+                <div class="info-card social-card">
+                    <h3>Connect With Us</h3>
+                    <div class="social-links">
+                        <a href="#" class="social-btn"><ion-icon name="logo-instagram"></ion-icon></a>
+                        <a href="#" class="social-btn"><ion-icon name="logo-facebook"></ion-icon></a>
+                        <a href="#" class="social-btn"><ion-icon name="logo-twitter"></ion-icon></a>
+                        <a href="#" class="social-btn"><ion-icon name="logo-whatsapp"></ion-icon></a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Right Side: Contact Form Card -->
+            <div class="contact-card-container">
+                <div class="contact-header">
+                    <h2>Send Us a Message</h2>
+                    <p>Fill out the form below and our team will get back to you within 24 hours.</p>
+                </div>
+
+                <form id="contact-form" class="contact-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="contact-name">Full Name</label>
+                            <div class="input-wrapper">
+                                <ion-icon name="person-outline"></ion-icon>
+                                <input type="text" id="contact-name" name="name" placeholder="John Doe" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contact-email">Email Address</label>
+                            <div class="input-wrapper">
+                                <ion-icon name="mail-outline"></ion-icon>
+                                <input type="email" id="contact-email" name="email" placeholder="john@example.com" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contact-subject">Topic</label>
+                        <div class="input-wrapper">
+                            <ion-icon name="help-circle-outline"></ion-icon>
+                            <select id="contact-subject" name="subject" required>
+                                <option value="" disabled selected>Select an option...</option>
+                                <option value="order">Order Status & Tracking</option>
+                                <option value="returns">Returns & Refunds</option>
+                                <option value="product">Product & Sizing Inquiry</option>
+                                <option value="other">General Feedback / Other</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contact-message">Message</label>
+                        <div class="input-wrapper textarea-wrapper">
+                            <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
+                            <textarea id="contact-message" name="message" rows="4" placeholder="How can we help you today?" required></textarea>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="contact-submit-btn" id="contact-submit-btn">
+                        <span>Send Message</span>
+                        <ion-icon name="paper-plane-outline"></ion-icon>
+                    </button>
+                </form>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-main">
+            <div class="footer-col brand-col">
+                <div class="logo">
+                    <span class="logo-icon"><img src="images/logo.png" alt="Iqiniso Logo"></span> 
+                    <strong>Iqiniso</strong>
+                </div>
+                <p class="brand-desc">Engineered for comfort, minimalist by design. Crafting steps that look forward.</p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Collections</h4>
+                <ul>
+                    <li><a href="shop.html">New Arrivals</a></li>
+                    <li><a href="shop.html">Best Sellers</a></li>
+                    <li><a href="shop.html">Sneakers</a></li>
+                    <li><a href="shop.html">Loafers & Boots</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#">Order Tracking</a></li>
+                    <li><a href="#">Shipping Policy</a></li>
+                    <li><a href="#">Returns & Exchanges</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col newsletter-col">
+                <h4>Stay in the Loop</h4>
+                <p>Subscribe to receive custom drops, styling tips, and private discounts.</p>
+                <form class="newsletter-form" onsubmit="event.preventDefault();">
+                    <input type="email" placeholder="Enter your email" aria-label="Your email" required>
+                    <button type="submit" aria-label="Subscribe"><ion-icon name="arrow-forward-outline"></ion-icon></button>
+                </form>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p class="copyright">© 2026 Iqiniso | Designed with Style</p>
+            <div class="footer-legal">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <div class="mobile-nav">
+        <ul>
+            <li><a href="index.html"><ion-icon name="home-outline"></ion-icon></a></li>
+            <li><a href="shop.html"><ion-icon name="bag-outline"></ion-icon></a></li>
+            <li><a href="saved.html"><ion-icon name="bookmark-outline"></ion-icon></a></li>
+            <li><a href="cart.html" class="active"><ion-icon name="cart"></ion-icon></a></li>
+            <li><a href="login.html"><ion-icon name="person-outline"></ion-icon></a></li>
+        </ul>
+    </div>
+
+    <script src="shop.js"></script>
+</body>
+</html>
