@@ -273,7 +273,7 @@ document.addEventListener('DOMContentLoaded', () => {
             localStorage.setItem('iqiniso_cart', JSON.stringify(cart));
             
             button.style.backgroundColor = '#22c55e';
-            if (button.classList.contains('add-to-cart-btn')) button.textContent = 'Added to Cart';
+            if (button.classList.contains('add-to-cart-btn')) button.textContent = 'Added';
             setTimeout(() => { 
                 button.style.backgroundColor = ''; 
                 if (button.classList.contains('add-to-cart-btn')) button.textContent = 'Add to Cart';
