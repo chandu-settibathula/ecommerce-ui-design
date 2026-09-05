@@ -37,8 +37,8 @@
     --shadow-md:  0 6px 16px rgba(24, 28, 35, 0.04), 0 16px 32px rgba(24, 28, 35, 0.04);
     --shadow-high: 0 20px 30px rgba(24, 28, 35, 0.08), 0 40px 60px rgba(24, 28, 35, 0.12);
 
-    --shadow-m: inset 0 2px 2px #fffffff5, 0 2px 4px #00000030, 0 4px 12px #00000015;
-    --shadow-d: inset 0 4px 12px #00000030, 0 2px 4px #ffffff90, 0 4px 8px #fffffff0;
+    --shadow-m: inset 0 1px 1px #ffffffea, 0 2px 4px #00000015, 0 8px 24px #0000000f;
+    --shadow-d: inset 0 2px 6px #00000035, 0 1px 2px #ffffff60, 0 4px 16px #ffffff15;
 
     /* --- Smooth Transitions --- */
     --transition-smooth: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
