@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initPaymentSummary();
     initPaymentMethodToggle();
     initPaymentForm();
-});
+}); 
 
 /**
  * Loads order items from localStorage and calculates order totals
