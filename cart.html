@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Shopping Bag | Iqiniso</title>
+    <title>Your Shopping Bag | Iqinso</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,8 +20,8 @@
 
     <nav>
         <div class="logo" onclick="window.location.href='index.html'">
-            <span class="logo-icon"><img src="images/logo.png" alt="Iqiniso Logo"></span> 
-            <strong>Iqiniso.footwear</strong>
+            <span class="logo-icon"><img src="images/logo.png" alt="Iqinso Logo"></span> 
+            <strong>Iqinso.footwear</strong>
         </div>
 
         <ul>
@@ -64,8 +64,8 @@
         <div class="footer-main">
             <div class="footer-col brand-col">
                 <div class="logo">
-                    <span class="logo-icon"><img src="images/logo.png" alt="Iqiniso Logo"></span> 
-                    <strong>Iqiniso</strong>
+                    <span class="logo-icon"><img src="images/logo.png" alt="Iqinso Logo"></span> 
+                    <strong>Iqinso</strong>
                 </div>
                 <p class="brand-desc">Engineered for comfort, minimalist by design. Crafting steps that look forward.</p>
             </div>
@@ -101,7 +101,7 @@
         </div>
 
         <div class="footer-bottom">
-            <p class="copyright">© 2026 Iqiniso | Designed with Style</p>
+            <p class="copyright">© 2026 Iqinso | Designed with Style</p>
             <div class="footer-legal">
                 <a href="privacy.html">Privacy Policy</a>
                 <a href="terms.html">Terms of Service</a>
@@ -127,7 +127,7 @@
             const totalLabel = document.getElementById('summary-total');
 
             function renderCart() {
-                const cart = JSON.parse(localStorage.getItem('iqiniso_cart')) || [];
+                const cart = JSON.parse(localStorage.getItem('iqinso_cart')) || [];
                 itemsContainer.innerHTML = '';
 
                 if (cart.length === 0) {
@@ -180,19 +180,19 @@
             }
 
             window.changeQty = (index, delta) => {
-                let cart = JSON.parse(localStorage.getItem('iqiniso_cart')) || [];
+                let cart = JSON.parse(localStorage.getItem('iqinso_cart')) || [];
                 cart[index].quantity += delta;
                 if (cart[index].quantity <= 0) {
                     cart.splice(index, 1);
                 }
-                localStorage.setItem('iqiniso_cart', JSON.stringify(cart));
+                localStorage.setItem('iqinso_cart', JSON.stringify(cart));
                 renderCart();
             };
 
             window.removeItem = (index) => {
-                let cart = JSON.parse(localStorage.getItem('iqiniso_cart')) || [];
+                let cart = JSON.parse(localStorage.getItem('iqinso_cart')) || [];
                 cart.splice(index, 1);
-                localStorage.setItem('iqiniso_cart', JSON.stringify(cart));
+                localStorage.setItem('iqinso_cart', JSON.stringify(cart));
                 renderCart();
             };
 
