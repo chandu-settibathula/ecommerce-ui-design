@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const listContainer = document.getElementById('saved-items-list');
 
     function renderSaved() {
-        const saved = JSON.parse(localStorage.getItem('iqiniso_saved')) || [];
+        const saved = JSON.parse(localStorage.getItem('iqinso_saved')) || [];
         listContainer.innerHTML = '';
 
         if (saved.length === 0) {
@@ -35,9 +35,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     window.removeSaved = (index) => {
-        let saved = JSON.parse(localStorage.getItem('iqiniso_saved')) || [];
+        let saved = JSON.parse(localStorage.getItem('iqinso_saved')) || [];
         saved.splice(index, 1);
-        localStorage.setItem('iqiniso_saved', JSON.stringify(saved));
+        localStorage.setItem('iqinso_saved', JSON.stringify(saved));
         renderSaved();
     };
 
