@@ -15,7 +15,7 @@ function initPaymentSummary() {
 
     if (!summaryItemsContainer) return;
 
-    const cart = JSON.parse(localStorage.getItem('iqiniso_cart')) || [];
+    const cart = JSON.parse(localStorage.getItem('iqinso_cart')) || [];
 
     if (cart.length === 0) {
         summaryItemsContainer.innerHTML = '<p style="color: var(--text-muted);">No items in checkout.</p>';
@@ -82,7 +82,7 @@ function initPaymentForm() {
         event.preventDefault();
 
         // Clear cart from local storage
-        localStorage.removeItem('iqiniso_cart');
+        localStorage.removeItem('iqinso_cart');
 
         // Show confirmation popup with random reference code
         const orderIdSpan = document.getElementById('order-id');
