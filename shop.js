@@ -263,14 +263,14 @@ document.addEventListener('DOMContentLoaded', () => {
             const price = parseFloat(container.getAttribute('data-price'));
             const imageSrc = container.querySelector('.product-card img').src;
 
-            let cart = JSON.parse(localStorage.getItem('iqiniso_cart')) || [];
+            let cart = JSON.parse(localStorage.getItem('iqinso_cart')) || [];
             const existingItem = cart.find(item => item.id === id);
             if (existingItem) {
                 existingItem.quantity += 1;
             } else {
                 cart.push({ id, name, price, image: imageSrc, quantity: 1 });
             }
-            localStorage.setItem('iqiniso_cart', JSON.stringify(cart));
+            localStorage.setItem('iqinso_cart', JSON.stringify(cart));
             
             button.style.backgroundColor = '#22c55e';
             if (button.classList.contains('add-to-cart-btn')) button.textContent = 'Added';
@@ -290,10 +290,10 @@ document.addEventListener('DOMContentLoaded', () => {
             const price = parseFloat(container.getAttribute('data-price'));
             const imageSrc = container.querySelector('.product-card img').src;
 
-            let saved = JSON.parse(localStorage.getItem('iqiniso_saved')) || [];
+            let saved = JSON.parse(localStorage.getItem('iqinso_saved')) || [];
             if (!saved.some(item => item.id === id)) {
                 saved.push({ id, name, price, image: imageSrc });
-                localStorage.setItem('iqiniso_saved', JSON.stringify(saved));
+                localStorage.setItem('iqinso_saved', JSON.stringify(saved));
             }
             
             button.style.backgroundColor = '#3b82f6';
